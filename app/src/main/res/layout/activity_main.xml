@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomRL">
+        <RelativeLayout
+            android:id="@+id/recordRL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/action_icon_background"
+            >
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/record">
+
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mainRL"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundend_background_input"
+            android:layout_toLeftOf="@+id/recordRL"
+            >
+
+
+            <RelativeLayout
+                android:id="@+id/camRL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/camera">
+
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/attachmentRL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toLeftOf="@id/camRL">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/attach">
+
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/emojiRL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+
+                android:background="@android:color/transparent"
+                >
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/emoji">
+
+                </ImageView>
+            </RelativeLayout>
+
+            <MultiAutoCompleteTextView
+                android:id="@+id/multiAutoCompleteTextViewMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="12sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="12sp"
+                android:layout_marginBottom="8sp"
+                android:layout_weight="0.2"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@id/attachmentRL"
+                android:layout_toRightOf="@id/emojiRL"
+                android:hint="Mesajınız"
+                android:isScrollContainer="true"
+                android:paddingStart="8sp"
+                android:paddingTop="8sp"
+                android:paddingEnd="8sp"
+                android:paddingBottom="8sp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+    <ListView
+        android:layout_above="@+id/bottomRL"
+        android:id="@+id/lvMessageBoard"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:divider="@null"
+        android:dividerHeight="1sp"
+        android:paddingBottom="20sp"
+        android:stackFromBottom="true">
+
+    </ListView>
+
+</RelativeLayout>
